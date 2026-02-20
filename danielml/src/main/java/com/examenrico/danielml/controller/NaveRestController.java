@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.examenrico.danielml.model.Nave;
-import com.examenrico.danielml.repository.TripulanteRepo;
 import com.examenrico.danielml.service.NaveServiceImpl;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,8 +24,7 @@ public class NaveRestController {
     @Autowired
     private NaveServiceImpl naveServiceImpl;
 
-    @Autowired
-    private TripulanteRepo tripulanteRepo;
+    
 
     @GetMapping("/{id}")
     public List<Nave> findById(@RequestParam ("id") Long id) {

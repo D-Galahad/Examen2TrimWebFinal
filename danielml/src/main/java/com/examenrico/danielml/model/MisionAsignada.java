@@ -15,6 +15,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class MisionAsignada {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -43,10 +45,10 @@ public class MisionAsignada {
     private BigDecimal fecha_estelar;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "estado_mision")
+    @Column(name = "estado")
     private EstadoMision estado_mision;
 
-    @Column(name = "presupuesto_mision")
+    @Column(name = "presupuesto")
     private BigDecimal presupuesto_mision;
 }
 
