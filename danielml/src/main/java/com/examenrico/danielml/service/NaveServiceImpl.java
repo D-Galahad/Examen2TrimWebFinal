@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.examenrico.danielml.model.Nave;
@@ -15,27 +16,27 @@ public class NaveServiceImpl implements NaveService  {
     @Autowired
     private NaveService naveService;
 
-    @Override
+    @Transactional(readOnly = true)
     public List<Nave> FindById(Long id) {
         return naveService.FindById(id);
     }
 
-    @Override
+    @Transactional(readOnly = true)
     public List<Nave> findAll() {
         return naveService.findAll();
     }
 
-    @Override
+    @Transactional(readOnly = true)
     public Nave updateNave(Nave nave) {
         return naveService.updateNave(nave);
     }
 
-    @Override
+    @Transactional(readOnly = true)
     public void deleteNaveById(@RequestBody Long id) {
         naveService.deleteNaveById(id);
     }
 
-    @Override
+    @Transactional(readOnly = true)
     public Nave addNave(Nave nave) {
         return naveService.addNave(nave);
     }
