@@ -17,7 +17,7 @@ public interface TripulanteRepo extends JpaRepository<Tripulante, Long>{
 
 
     //presupuesto total invertido en todas las misiones de un tripulante específico
-    @Query("SELECT SUM(m.presupuesto_mision)*0.85 FROM mision_asignada m WHERE m.estado_mision = 'COMPLETADA' AND m.tripulante_id = :id")
+    @Query("SELECT SUM(m.presupuesto_mision) FROM mision_asignada m WHERE  m.tripulante_id = :id")
     public Repositories PresupuestoInvertidoTotales(@Param("id") Long id);
 
     
