@@ -23,9 +23,8 @@ public class NaveController {
 
     
     @GetMapping("/{id}")
-    public List<Nave> findById(@RequestParam ("id") Long id) {
+    public List<Nave> FindById(@RequestParam ("id") Long id) {
         return naveServiceImpl.FindById(id);
-
     }
     
 
