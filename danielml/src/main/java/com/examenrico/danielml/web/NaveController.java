@@ -27,6 +27,7 @@ public class NaveController {
         return naveServiceImpl.FindById(id);
 
     }
+    
 
     @GetMapping
     public List<Nave> findAll() {

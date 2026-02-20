@@ -5,5 +5,4 @@ public enum Rango {
     CAPITAN,
     OFICIAL,
     RECLUTA
-   
 }
